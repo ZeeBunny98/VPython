@@ -19,6 +19,12 @@ xPos = 0
 while True:
     rate(50)
     xPos+=deltaX
-    if xPos>((roomWidth/2)-ball.radius-wallThickness) or xPos<((-roomWidth/2)+ball.radius+wallThickness):
+
+    Xrme = xPos+ballRadius
+    Xlme = xPos-ballRadius
+    Rwe = (roomWidth/2)-(wallThickness/2)
+    Lwe = -(roomWidth/2)+(wallThickness/2)
+
+    if Xrme>=Rwe or Xlme<=Lwe:
         deltaX*=-1
     ball.pos=vector(xPos,0,0)
